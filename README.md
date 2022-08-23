@@ -1,4 +1,4 @@
-# LAP 4 CODING CHALLENGE
+# LAP 4 CODING CHALLENGE - Shorty Urly
 
 ## Installation
 * Clone repo
