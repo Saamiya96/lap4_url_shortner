@@ -22,7 +22,7 @@
 ### Future To-do's
 * Testing
 
-## Contacts
+## Contacts!
 
 [Saamiya Yousuf](https://github.com/saamiya96) & 
 [Harry Grant](https://github.com/harryg15)
