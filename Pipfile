@@ -10,6 +10,7 @@ flask-sqlalchemy = "*"
 waitress = "*"
 werkzeug = "*"
 requests = "*"
+flask-migrate = "*"
 
 [dev-packages]
 
