@@ -21,6 +21,7 @@
 
 ### Future To-do's
 * Testing
+* MVC approach
 
 ## Contacts!
 
