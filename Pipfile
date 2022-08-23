@@ -12,6 +12,7 @@ werkzeug = "*"
 requests = "*"
 flask-migrate = "*"
 gunicorn = "*"
+python-dotenv = "*"
 
 [dev-packages]
 
