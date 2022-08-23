@@ -13,6 +13,8 @@ CORS(app)
 db = SQLAlchemy(app)
 migrate = Migrate(app, db)
 
+app.config['SQLALCHEMY_DATABASE_URI'] = 'postgres://plswhzejbyykhc:8bb725ea4f4efcd299dabbe6dbce9ae8358b578a7c939c34ec039f62516dd264@ec2-54-228-125-183.eu-west-1.compute.amazonaws.com:5432/d3g7ggqj0l1mc'
+
 # Connect sql db to heroku
 
 
@@ -58,6 +60,7 @@ def url_handler():
 
     return render_template('index.html')
 
+
 # id route
 @app.route('/<short_id>')
 def redirect_url(short_id):
@@ -66,13 +69,15 @@ def redirect_url(short_id):
         return redirect(link.url)
     else:
         return render_template('index.html', text=f"That link doesn't exist, please create one here")
-        
+
+
 # short id generator        
 def create_short_id(size=6, chars=string.ascii_uppercase + string.digits):
     return ''.join(random.choice(chars) for _ in range(size))
 
+
 # Error handling
-@app.errorhandler(404)
+@app.errorhandler(exceptions.NotFound)
 def handle_404(err):
     return render_template('errors/404.html'), 404
 
