@@ -1,10 +1,10 @@
-from crypt import methods
-from operator import methodcaller
-from flask import Flask, jsonify, render_template, redirect
+from flask import Flask, request, jsonify, render_template, redirect
 from flask_sqlalchemy import SQLAlchemy
 from flask_migrate import Migrate
 from flask_cors import CORS
 from werkzeug import exceptions
+import string
+import random
 
 app = Flask(__name__)
 CORS(app)
@@ -30,11 +30,32 @@ class URLModel(db.Model):
     def __repr__(self) -> str:
         return f"<URL: {self.url}"
 
-
+db.create_all()
 
 @app.route('/', methods=['GET', 'POST'])
-def home():
-    return render_template ('index.html')
+def url_handler():
+    if request.method == 'POST':
+        url = request.form['url']
+        check_url = URLModel.query.filter_by(url=url).first()
+        
+        if not url:
+            return render_template('index.html',text='You need to enter a URL!'), 200
+        
+        if check_url:
+            short_id=check_url.short_id
+            return render_template('index.html',text='That URL already has a link:', link=request.host_url + short_id), 200
+       
+        short_id = create_short_id(6)
+
+        new_url = URLModel(
+            url=url, short_id=short_id)
+        db.session.add(new_url)
+        db.session.commit()
+        
+
+        return render_template('index.html', text= "Here is your new URL:", link=request.host_url + short_id)
+         
+    return render_template('index.html')
 
 
 
