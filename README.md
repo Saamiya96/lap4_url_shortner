@@ -10,6 +10,16 @@
 ## Deployment
 * ShortyUrly deployed to Heroku - https://shortyurly.herokuapp.com/
 
+## Wins & Challenges
 
+### Wins
+* Fully functioning app
+* Deployed! :) 
+
+### Challenges
+* Deploying to Heroku and adding the DB there - though managed to sucessfully store it to Heroku
+
+### Future To-do's
+* Testing
 
 By Saamiya & Harry
