@@ -1,3 +1,74 @@
-h1 {
-    color: blue
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: linear-gradient(45deg, orangered, dodgerblue);
+
 }
+
+/* .url_shortner {
+    position: relative;
+    padding: 50px 50px;
+    background: #fff;
+    border-radius: 12px;
+} */
+
+.url {
+    font-size: 2em;
+    border-left: 5px solid green;
+    color: #000;
+    letter-spacing: 5px;
+    margin-bottom: 30px;
+    font-weight: bold;
+    padding-left: 10px;
+    display: block;
+
+}
+
+.btn {
+   
+    background: dodgerblue;
+    color: #fff;
+    border: #fff;
+    /* display: block; */
+    margin-top: 30px;
+    margin-bottom: 5px;
+    padding: 5px 24px;
+    border-radius: 8px;
+    transition-duration: 0.4s;
+}
+
+/* .btn:hover {
+    background-color: white;
+    color: dodgerblue;
+    border-color: dodgerblue;
+} */
+
+.box {
+    /* display: block; */
+    /* width: 100px;
+    max-width: 100px; */
+
+}
+
+.result {
+    position: relative;
+    padding: 20px 20px;
+    background: #fff;
+    border-radius: 10px;
+}
+
+#footer {
+    position: fixed;
+    color: var(--p-red);
+    bottom: 0;
+    width: 100%;
+    padding: 10px;
+    background-color: var(--p-blue);
+    text-align: center;
+}
+
