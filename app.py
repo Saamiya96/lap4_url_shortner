@@ -11,29 +11,29 @@ app = Flask(__name__)
 CORS(app)
 
 # Database
-db = SQLAlchemy(app)
-migrate = Migrate(app, db)
+# db = SQLAlchemy(app)
+# migrate = Migrate(app, db)
 
 # Connect sql db to heroku
 app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://plswhzejbyykhc:8bb725ea4f4efcd299dabbe6dbce9ae8358b578a7c939c34ec039f62516dd264@ec2-54-228-125-183.eu-west-1.compute.amazonaws.com:5432/d3g7ggqj0l1mc'
 
 # Model
-class URLModel(db.Model):
-    __tablename__ = 'urls'
+# class URLModel(db.Model):
+#     __tablename__ = 'urls'
 
-    id = db.Column(db.Integer, autoincrement=True, primary_key=True)
-    url = db.Column(db.String())
-    short_id = db.Column(db.String())
+#     id = db.Column(db.Integer, autoincrement=True, primary_key=True)
+#     url = db.Column(db.String())
+#     short_id = db.Column(db.String())
 
-    def __init__(self, url, short_id):
-        self.url = url
-        self.short_id = short_id
+#     def __init__(self, url, short_id):
+#         self.url = url
+#         self.short_id = short_id
 
-    def __repr__(self):
-        return f"<URL:  {self.url}>"
+#     def __repr__(self):
+#         return f"<URL:  {self.url}>"
 
 
-db.create_all()
+# db.create_all()
 
 
 @app.route('/', methods=['GET', 'POST'])
