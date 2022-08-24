@@ -1,7 +1,5 @@
 {% extends "base.html" %} {% block content %}
 
-<h1>URL Shortner</h1>
-
 <div class="url_shortner">
     <form class="" method="POST" action="/">
         <label class="url" for="url">ENTER URL</label>
@@ -11,7 +9,13 @@
 </div>
 
 <div class="result">{{text}}
-    <a href="{{link}}">{{link}}</a>
+    <a target="_blank" href="{{link}}">{{link}}</a>
 </div>
+
+<footer id="footer">
+    &copy; Saamiya & Harry
+</footer>
+
+
 
 {% endblock %}
